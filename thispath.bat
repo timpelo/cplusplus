@@ -1,5 +1,5 @@
 @echo off
 color a
-title java
+title cmd
 cmd /k
 @echo on
