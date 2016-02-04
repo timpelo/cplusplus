@@ -1,0 +1,12 @@
+1. c (1p)
+2. b (1p)
+3. a (-0.25p)  correct was b
+4. b (-0.25p)  correct was a
+5. e (1p)
+6. a (1p)
+7. d (-0.25p)  correct was b
+8. c (1p)
+9. b (1p)
+10. a (-0.25p) correct was e
+
+RESULT: 5p
