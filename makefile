@@ -1,5 +1,5 @@
-e1: e1.cpp
-	g++ -ansi -o e1 e1.cpp
+create: 05/point.cpp 05/e6.cpp 05/line.cpp 05/pixel.cpp 05/rectangle.cpp 05/circle.cpp 05/shape.cpp
+	g++ -ansi 05/point.cpp 05/pixel.cpp 05/e6.cpp 05/line.cpp 05/rectangle.cpp 05/circle.cpp 05/shape.cpp -o 05/e6app
 
-style: e1.cpp
-	astyle --style=allman e1.cpp
+style: 05/e6.cpp 05/point.cpp 05/pixel.cpp
+	astyle --style=allman 05/e6.cpp 05/line.cpp 05/pixel.cpp 05/rectangle.cpp 05/circle.cpp 05/shape.cpp 05/point.cpp 05/point.h

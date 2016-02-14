@@ -1,0 +1,24 @@
+#include <iostream>
+#include "circle.h"
+#include "rectangle.h"
+#include "shape.h"
+
+using namespace std;
+
+int main()
+{
+
+    Rectangle* rect = new Rectangle(1, 2, 5, 5);
+    cout << rect->CalcArea() << endl;
+    cout << rect->CalcCirc() << endl;
+
+    Circle* circle = new Circle(2, 3, 5);
+    cout << circle->CalcArea() << endl;
+    cout << circle->CalcCirc() << endl;
+
+    delete rect;
+    delete circle;
+
+    rect = NULL;
+    circle = NULL;
+}

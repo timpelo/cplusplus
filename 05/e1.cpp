@@ -1,0 +1,25 @@
+#include <iostream>
+#include "point.h"
+
+using namespace std;
+
+int main()
+{
+    int x;
+    int y;
+
+    cout << "Give x: " << endl;
+    cin >> x;
+    cout << "Give y: " << endl;
+    cin >> y;
+
+    Point* point = new Point(x, y);
+
+    cout << point->GetX() << endl;
+    cout << point->GetY() << endl;
+
+    delete point;
+    point = NULL;
+
+    return 0;
+}
