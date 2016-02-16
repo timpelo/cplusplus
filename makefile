@@ -1,5 +1,5 @@
-create: 05/point.cpp 05/e6.cpp 05/line.cpp 05/pixel.cpp 05/rectangle.cpp 05/circle.cpp 05/shape.cpp
-	g++ -ansi 05/point.cpp 05/pixel.cpp 05/e6.cpp 05/line.cpp 05/rectangle.cpp 05/circle.cpp 05/shape.cpp -o 05/e6app
+create: 06/e3.cpp 06/car.cpp 06/customer.cpp 06/shop.cpp
+	g++ -Wall -ansi 06/e3.cpp 06/car.cpp 06/customer.cpp 06/shop.cpp -o 06/e3app
 
-style: 05/e6.cpp 05/point.cpp 05/pixel.cpp
-	astyle --style=allman 05/e6.cpp 05/line.cpp 05/pixel.cpp 05/rectangle.cpp 05/circle.cpp 05/shape.cpp 05/point.cpp 05/point.h
+style: 06/e3.cpp
+	astyle --style=allman 06/e3.cpp 06/car.cpp 06/car.h
