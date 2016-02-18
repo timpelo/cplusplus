@@ -34,3 +34,14 @@ void Customer::SetId(int id)
     id_ = id;
 }
 
+bool Customer::SetRentCar(Car* car)
+{
+    rentCar_ = car;
+    return true;
+}
+
+Car* Customer::GetRentCar()
+{
+    return rentCar_;
+}
+

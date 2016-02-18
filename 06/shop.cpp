@@ -79,3 +79,18 @@ Customer* Shop::FindCustomer(int id)
     
     return result;
 }
+
+bool Shop::RentCar(int customerId, int carId)
+{
+    Customer* tempCust = customerList_.at(customerId);
+    Car* tempCar = carList_.at(carId);
+    
+    if(tempCar->GetAvailable())
+    {
+        tempCust->SetRentCar(tempCar);
+        tempCar->SetAvailable(true);
+        return true;
+    }
+    
+    return false;
+}
