@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Car::Car(string brand) : brand_(brand), available_(false)
+Car::Car(string brand) : brand_(brand), available_(true)
 {
     cout << "Car " << brand << " is created." << endl;
 }

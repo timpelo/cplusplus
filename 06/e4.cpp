@@ -16,7 +16,9 @@ int main()
     
     shop->RentCar(jarmo, car);
     
-    cout << jarmo->GetRentCar()->GetBrand() << endl;
+    cout << jarmo->GetName() << " drives with " << jarmo->GetRentCar()->GetBrand() << endl;
     
     delete shop;
+    
+    return 0;
 }

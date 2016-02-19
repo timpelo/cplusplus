@@ -15,25 +15,20 @@ Shop::Shop()
 Shop::~Shop()
 {
     const int carArraySize = carList_.size();
-    cout << carArraySize << endl;
     
     for(int i = 0; i < carArraySize; i++)
     {
-        cout << "inside car loop" << endl;
         if(carList_.at(i) != NULL) {
             
             delete carList_.at(i);
-            //carList_.erase(carList_.begin()+i);
         }
     }
     const int customerArraySize = customerList_.size();
     
     for(int i = 0; i < customerArraySize; i++)
     {
-        cout << "inside customer loop" << endl;
         if(customerList_.at(i) != NULL) {
             delete customerList_.at(i);
-            //customerList_.erase(customerList_.begin()+1);
         }
     }
 
@@ -95,9 +90,49 @@ bool Shop::RentCar(Customer* cust, Car* car)
     if(car->GetAvailable())
     {
         cust->SetRentCar(car);
-        car->SetAvailable(true);
+        car->SetAvailable(false);
         return true;
     }
     
     return false;
+}
+
+void Shop::PrintInfo()
+{
+    cout << "-------------------------" << endl;
+    cout << "------CAR HOUSE INFO-----" << endl;
+    cout << "-------------------------" << endl;
+    const int carArraySize = carList_.size();
+    for(int i = 0; i < carArraySize; i++)
+    {
+        if(carList_.at(i) != NULL) {
+            Car* temp = carList_.at(i);
+            cout << "Car " << temp->GetBrand();
+            
+            if(temp->GetAvailable()) {
+                cout << " is available." << endl;
+            } else {
+                cout << " is unavailable." << endl;
+            }
+            temp = NULL;
+        }
+    }
+    
+    const int customerArraySize = customerList_.size();
+    for(int i = 0; i < customerArraySize; i++)
+    {
+        if(customerList_.at(i) != NULL) {
+            Customer* temp = customerList_.at(i);
+            
+            if(temp->GetRentCar() != NULL) {
+                cout << "Customer " << temp->GetName() << " has rented " << temp->GetRentCar()->GetBrand() << endl;
+            } else {
+                cout << "Customer " << temp->GetName() << " has not rented any car" << endl;
+            }
+            
+            temp = NULL;
+        }
+    }
+    
+    cout << "-------END OF INFO------" << endl;
 }

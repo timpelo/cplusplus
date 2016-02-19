@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Customer::Customer(string name, int id) : name_(name), id_(id)
+Customer::Customer(string name, int id) : name_(name), id_(id), rentCar_(NULL)
 {
     cout << "Customer " << name_ << " created." << endl;
 }
@@ -36,8 +36,12 @@ void Customer::SetId(int id)
 
 bool Customer::SetRentCar(Car* car)
 {
-    rentCar_ = car;
-    return true;
+    if(rentCar_ == NULL) {
+        rentCar_ = car;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 Car* Customer::GetRentCar()

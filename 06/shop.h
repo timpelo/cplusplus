@@ -22,6 +22,7 @@ public:
     void RemoveCustomer(int customerId);
     Customer* FindCustomer(int customerId);
     bool RentCar(Customer* cust, Car* car);
+    void PrintInfo();
 };
 
 #endif
