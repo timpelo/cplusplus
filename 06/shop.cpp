@@ -15,32 +15,41 @@ Shop::Shop()
 Shop::~Shop()
 {
     const int carArraySize = carList_.size();
+    cout << carArraySize << endl;
     
     for(int i = 0; i < carArraySize; i++)
     {
+        cout << "inside car loop" << endl;
         if(carList_.at(i) != NULL) {
+            
             delete carList_.at(i);
+            //carList_.erase(carList_.begin()+i);
         }
     }
     const int customerArraySize = customerList_.size();
     
     for(int i = 0; i < customerArraySize; i++)
     {
+        cout << "inside customer loop" << endl;
         if(customerList_.at(i) != NULL) {
             delete customerList_.at(i);
+            //customerList_.erase(customerList_.begin()+1);
         }
     }
+
     cout << "Shop removed" <<endl;
 }
 
 void Shop::AddCar(Car* car)
 {
     carList_.push_back(car);
+    cout << "Car " << car->GetBrand() << " added." << endl;
 }
 
 void Shop::AddCustomer(Customer* customer)
 {
     customerList_.push_back(customer);
+    cout << "Customer " << customer->GetName() << " added." << endl;
 }
 
 void Shop::RemoveCar(int carNumber)
@@ -80,15 +89,13 @@ Customer* Shop::FindCustomer(int id)
     return result;
 }
 
-bool Shop::RentCar(int customerId, int carId)
+bool Shop::RentCar(Customer* cust, Car* car)
 {
-    Customer* tempCust = customerList_.at(customerId);
-    Car* tempCar = carList_.at(carId);
-    
-    if(tempCar->GetAvailable())
+
+    if(car->GetAvailable())
     {
-        tempCust->SetRentCar(tempCar);
-        tempCar->SetAvailable(true);
+        cust->SetRentCar(car);
+        car->SetAvailable(true);
         return true;
     }
     
