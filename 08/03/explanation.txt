@@ -1,0 +1,5 @@
+Signals and slots are used for communication
+between two objects. Signal happens when certain
+event occurs. Signal is connected to Slot and when
+event occurs, Signal will be sent to Slot (i.e method
+of other object)
