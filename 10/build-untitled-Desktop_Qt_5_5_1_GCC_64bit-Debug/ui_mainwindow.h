@@ -35,7 +35,6 @@ public:
     QWidget *centralWidget;
     QWidget *horizontalLayoutWidget;
     QHBoxLayout *horizontalLayout;
-    QListWidget *soundList;
     QVBoxLayout *verticalLayout;
     QSpacerItem *verticalSpacer_2;
     QDial *dial;
@@ -44,6 +43,7 @@ public:
     QPushButton *playNowButton;
     QPushButton *playRandomButton;
     QSpacerItem *verticalSpacer;
+    QListWidget *soundList;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -63,11 +63,6 @@ public:
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        soundList = new QListWidget(horizontalLayoutWidget);
-        soundList->setObjectName(QStringLiteral("soundList"));
-
-        horizontalLayout->addWidget(soundList);
-
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
@@ -171,6 +166,11 @@ public:
 
 
         horizontalLayout->addLayout(verticalLayout);
+
+        soundList = new QListWidget(horizontalLayoutWidget);
+        soundList->setObjectName(QStringLiteral("soundList"));
+
+        horizontalLayout->addWidget(soundList);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);

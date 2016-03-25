@@ -1,8 +1,10 @@
 #include "mytimer.h"
+#include <iostream>
 
+using namespace std;
 MyTimer::MyTimer(QLCDNumber* timer) : timer_(timer)
 {
-
+    player_ = new QSound("/home/jani/projects/cplusplus/10/untitled/sounds/bark.wav");
 }
 void MyTimer::run() {
     int time = timer_->intValue();
@@ -18,6 +20,11 @@ void MyTimer::run() {
 }
 
 void MyTimer::playSound() {
-    soud_ = new QSound("sound.mp3");
-    sound_->play();
+    cout << "inside " << endl;
+    player_->play();
+}
+
+void MyTimer::setSound(QString fileName) {
+    delete player_;
+    player_ = new QSound("/home/jani/projects/cplusplus/10/untitled/sounds/" + fileName);
 }

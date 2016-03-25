@@ -25,9 +25,6 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QListWidget" name="soundList"/>
-     </item>
-     <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <spacer name="verticalSpacer_2">
@@ -506,6 +503,9 @@
         </spacer>
        </item>
       </layout>
+     </item>
+     <item>
+      <widget class="QListWidget" name="soundList"/>
      </item>
     </layout>
    </widget>

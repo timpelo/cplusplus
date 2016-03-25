@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QListWidget>
 
 namespace Ui {
 class MainWindow;
@@ -17,9 +18,11 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    QListWidget* soundList;
 
 public slots:
     void startTimer();
+    void playNow();
 };
 
 #endif // MAINWINDOW_H
