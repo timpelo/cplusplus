@@ -1,5 +1,5 @@
-create: 06/e5.cpp 06/car.cpp 06/customer.cpp 06/shop.cpp
-	g++ -Wall -ansi 06/e5.cpp 06/car.cpp 06/customer.cpp 06/shop.cpp -o 06/e5app
+create: 07/e3.cpp 07/array.h 
+	g++ -Wall -ansi 07/e3.cpp 07/array.h  -o 07/e3app
 
-style: 06/e5.cpp
-	astyle --style=allman 06/e5.cpp 06/car.cpp 06/car.h
+style: 07/e3.cpp 07/array.h 
+	astyle --style=allman 07/e3.cpp 07/array.h
