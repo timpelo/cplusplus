@@ -31,11 +31,11 @@ public:
     QWidget *centralWidget;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
+    QPushButton *playButton;
+    QPushButton *teamButton;
+    QPushButton *marketButton;
     QSpacerItem *verticalSpacer;
-    QPushButton *pushButton_4;
+    QPushButton *quitButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -55,30 +55,30 @@ public:
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        pushButton = new QPushButton(verticalLayoutWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setMinimumSize(QSize(0, 5));
+        playButton = new QPushButton(verticalLayoutWidget);
+        playButton->setObjectName(QStringLiteral("playButton"));
+        playButton->setMinimumSize(QSize(0, 0));
 
-        verticalLayout->addWidget(pushButton);
+        verticalLayout->addWidget(playButton);
 
-        pushButton_2 = new QPushButton(verticalLayoutWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        teamButton = new QPushButton(verticalLayoutWidget);
+        teamButton->setObjectName(QStringLiteral("teamButton"));
 
-        verticalLayout->addWidget(pushButton_2);
+        verticalLayout->addWidget(teamButton);
 
-        pushButton_3 = new QPushButton(verticalLayoutWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        marketButton = new QPushButton(verticalLayoutWidget);
+        marketButton->setObjectName(QStringLiteral("marketButton"));
 
-        verticalLayout->addWidget(pushButton_3);
+        verticalLayout->addWidget(marketButton);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
 
-        pushButton_4 = new QPushButton(verticalLayoutWidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        quitButton = new QPushButton(verticalLayoutWidget);
+        quitButton->setObjectName(QStringLiteral("quitButton"));
 
-        verticalLayout->addWidget(pushButton_4);
+        verticalLayout->addWidget(quitButton);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -100,10 +100,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "Play next match", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "Manage your team", 0));
-        pushButton_3->setText(QApplication::translate("MainWindow", "Market", 0));
-        pushButton_4->setText(QApplication::translate("MainWindow", "Quit", 0));
+        playButton->setText(QApplication::translate("MainWindow", "Play next match", 0));
+        teamButton->setText(QApplication::translate("MainWindow", "Manage your team", 0));
+        marketButton->setText(QApplication::translate("MainWindow", "Market", 0));
+        quitButton->setText(QApplication::translate("MainWindow", "Quit", 0));
     } // retranslateUi
 
 };

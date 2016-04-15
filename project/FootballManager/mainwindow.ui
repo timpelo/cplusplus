@@ -25,7 +25,7 @@
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="playButton">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -38,14 +38,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="teamButton">
        <property name="text">
         <string>Manage your team</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="marketButton">
        <property name="text">
         <string>Market</string>
        </property>
@@ -65,7 +65,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="quitButton">
        <property name="text">
         <string>Quit</string>
        </property>
