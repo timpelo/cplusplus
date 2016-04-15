@@ -1,5 +1,7 @@
 #include "mainwindow.h"
+#include "matchwindow.h"
 #include "ui_mainwindow.h"
+#include "ui_mainmenu.h"
 #include <iostream>
 
 using namespace std;
@@ -9,8 +11,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setFixedHeight(860);
+    setFixedHeight(860);
+
+    mainMenu = new MainMenu(this);
+
+    backButton = new QPushButton(this);
+    backButton->setText("Back");
+    backButton->setVisible(false);
+
     setButtonListeners();
-    playerTeam = new Team("Fc Milan");
+    playerTeam = new Team("A.C Milan");
+
+    setCentralWidget(mainMenu);
+    setWindowFlags(Qt::Window | Qt::MSWindowsFixedSizeDialogHint);
 }
 
 MainWindow::~MainWindow()
@@ -19,23 +33,25 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::setButtonListeners() {
-    connect(ui->playButton, SIGNAL(clicked()), this, SLOT(playGame()));
-    connect(ui->teamButton, SIGNAL(clicked()), this, SLOT(teamView()));
+    connect(mainMenu->ui->playButton, SIGNAL(clicked()), this, SLOT(playGame()));
+    connect(mainMenu->ui->teamButton, SIGNAL(clicked()), this, SLOT(teamView()));
+    connect(backButton, SIGNAL(clicked()), this, SLOT(showMenu()));
 }
 
-QString MainWindow::playGame() {
-    QString result = "";
-    cout << "play game" << endl;
-    return result;
+bool MainWindow::playGame() {
+    MatchWindow* matchWindow = new MatchWindow(this);
+    setMenuWidget(backButton);
+    backButton->setVisible(true);
+    setCentralWidget(matchWindow);
+    return true;
 }
 
 void MainWindow::teamView() {
     playerListWidget = new QListWidget(this);
-    QPushButton* backButton = new QPushButton(this);
-    backButton->setText("Back");
     setMenuWidget(backButton);
+    backButton->setVisible(true);
 
-    for(int i = 0; i < 5; i++ ) {
+    for(int i = 0; i < 11; i++ ) {
         Player* pl = playerTeam->getPlayerList()[i];
         QString info = pl->getFname() + " "
                 + pl->getLname() + " "
@@ -46,4 +62,16 @@ void MainWindow::teamView() {
     }
 
     setCentralWidget(playerListWidget);
+}
+
+void MainWindow::showMenu(){
+
+    if(backButton->isVisible()) {
+        backButton->setVisible(false);
+    }
+
+    mainMenu = new MainMenu(this);
+    setCentralWidget(mainMenu);
+    setButtonListeners();
+
 }

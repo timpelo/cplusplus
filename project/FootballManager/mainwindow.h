@@ -3,9 +3,11 @@
 
 #include <QMainWindow>
 #include <QListWidget>
+#include <QPushButton>
 #include <string>
 #include "team.h";
 #include "player.h"
+#include "mainmenu.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,14 +22,17 @@ public:
     ~MainWindow();
     Team* playerTeam;
     QListWidget* playerListWidget;
+    QPushButton* backButton;
+    MainMenu* mainMenu;
 
 private:
     Ui::MainWindow *ui;
     void setButtonListeners();
 
 public slots:
-    QString playGame();
+    bool playGame();
     void teamView();
+    void showMenu();
 };
 
 #endif // MAINWINDOW_H

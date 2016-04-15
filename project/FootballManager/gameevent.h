@@ -1,14 +1,15 @@
 #ifndef GAMEEVENT_H
 #define GAMEEVENT_H
 
+#include <QWidget>
 #include "team.h"
-#include <string>
 
 
-class GameEvent
+class GameEvent : public QWidget
 {
+    Q_OBJECT
 public:
-    GameEvent();
+    GameEvent(QWidget* parent = 0);
     Team* home;
     Team* guest;
     void setHomeTeam(Team* home);

@@ -16,11 +16,8 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -29,13 +26,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
-    QPushButton *playButton;
-    QPushButton *teamButton;
-    QPushButton *marketButton;
-    QSpacerItem *verticalSpacer;
-    QPushButton *quitButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -47,39 +37,6 @@ public:
         MainWindow->resize(811, 515);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        verticalLayoutWidget = new QWidget(centralWidget);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(150, 60, 521, 291));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
-        playButton = new QPushButton(verticalLayoutWidget);
-        playButton->setObjectName(QStringLiteral("playButton"));
-        playButton->setMinimumSize(QSize(0, 0));
-
-        verticalLayout->addWidget(playButton);
-
-        teamButton = new QPushButton(verticalLayoutWidget);
-        teamButton->setObjectName(QStringLiteral("teamButton"));
-
-        verticalLayout->addWidget(teamButton);
-
-        marketButton = new QPushButton(verticalLayoutWidget);
-        marketButton->setObjectName(QStringLiteral("marketButton"));
-
-        verticalLayout->addWidget(marketButton);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout->addItem(verticalSpacer);
-
-        quitButton = new QPushButton(verticalLayoutWidget);
-        quitButton->setObjectName(QStringLiteral("quitButton"));
-
-        verticalLayout->addWidget(quitButton);
-
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -100,10 +57,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        playButton->setText(QApplication::translate("MainWindow", "Play next match", 0));
-        teamButton->setText(QApplication::translate("MainWindow", "Manage your team", 0));
-        marketButton->setText(QApplication::translate("MainWindow", "Market", 0));
-        quitButton->setText(QApplication::translate("MainWindow", "Quit", 0));
     } // retranslateUi
 
 };

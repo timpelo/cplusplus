@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-GameEvent::GameEvent()
+GameEvent::GameEvent(QWidget* parent) :
+    QWidget(parent)
 {
     QString array[9] = {"Manchester", "Liverpool", "Chelsea",
                            "Arsenal", "Tottenham", "Aston Villa",

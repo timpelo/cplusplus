@@ -2,24 +2,42 @@
 
 Team::Team(QString name): name(name)
 {
-    playerList = new Player*[20];
+    playerList = new Player*[11];
 
 
     // Inserst dummy data to playerList. Will be repleaced.
-    Player* player = new Player("Christiano", "Ronaldo", 99, 88);
+    Player* player = new Player("Christian", "Abbiati", 77, 95);
     playerList[0] = player;
 
-    Player* player2 = new Player("Sami", "Hyypia", 83, 77);
+    Player* player2 = new Player("Ignazio", "Abate", 75, 80);
     playerList[1] = player2;
 
-    Player* player3 = new Player("Lionel", "Messi", 65, 65);
+    Player* player3 = new Player("Luca", "Antonelli", 55, 85);
     playerList[2] = player3;
 
-    Player* player4 = new Player("Zlatan", "Ibrahimovic", 77, 77);
+    Player* player4 = new Player("Rodrigo", "Ely", 68, 82);
     playerList[3] = player4;
 
-    Player* player5 = new Player("Wayne", "Rooney", 90, 45);
+    Player* player5 = new Player("Philippe", "Mexes", 85, 90);
     playerList[4] = player5;
+
+    Player* player6 = new Player("Juraj", "Kucka", 85, 85);
+    playerList[5] = player6;
+
+    Player* player7 = new Player("Jose", "Mauri", 90, 87);
+    playerList[6] = player7;
+
+    Player* player8 = new Player("Andrea", "Poli", 88, 88);
+    playerList[7] = player8;
+
+    Player* player9 = new Player("Manuel", "Locatelli", 96, 96);
+    playerList[8] = player9;
+
+    Player* player10 = new Player("Mario", "Balotelli", 99, 82);
+    playerList[9] = player10;
+
+    Player* player11 = new Player("Jeremy", "Menez", 98, 75);
+    playerList[10] = player11;
 
     b_total = 150;
     b_training = 30;
