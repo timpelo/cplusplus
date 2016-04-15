@@ -1,0 +1,30 @@
+PRODUCT BACKLOG
+
+    File       : PRODUCTBACKLOG.txt
+    Time-stamp : 2016-03-31T17:50 Jani Timonen
+    Description: Product Backlog is the master list of all functionality desired in 
+                 the product. 
+
+PRODUCT BACKLOG WITH RELEASES
+
+    RELEASE 1: 2016-04-18
+
+    - view all players in a list.
+    - view budget of different actions.
+    - play game against random team.
+
+    RELEASE 2: 2016-05-02
+
+    - buy new players
+    - sell players
+    - name your team
+    - tweak budget of different actions
+
+    RELEASE 3: 2016-05-16
+
+    - play whole season against various teams
+    - set player positions (goalkeepers, defenders etc.)
+    - follow game in "real time" (speeded up i.e 1min in real time 
+    is 30 min in game)
+
+End of file.
