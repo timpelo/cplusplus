@@ -14,6 +14,7 @@ public:
     Player** playerList;
     Player** getPlayerList();
     void printPlayers();
+    QString toString();
 
 private:
 

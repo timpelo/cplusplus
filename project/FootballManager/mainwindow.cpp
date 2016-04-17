@@ -40,6 +40,7 @@ void MainWindow::setButtonListeners() {
 
 bool MainWindow::playGame() {
     MatchWindow* matchWindow = new MatchWindow(this);
+    matchWindow->setHomeTeam(playerTeam);
     setMenuWidget(backButton);
     backButton->setVisible(true);
     setCentralWidget(matchWindow);

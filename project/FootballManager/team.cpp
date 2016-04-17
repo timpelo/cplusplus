@@ -64,3 +64,7 @@ void Team::printPlayers() {
     //    cout << "--------------------------------------------------" + endl;
     //}
 }
+
+QString Team::toString() {
+    return name;
+}

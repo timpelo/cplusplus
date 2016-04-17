@@ -14,7 +14,7 @@ public:
     Team* home;
     Team* guest;
     void setHomeTeam(Team* home);
-    void setGuestTeam(Team* home);
+    void setGuestTeam(Team* guest);
     bool playGame();
     Ui::Match* ui;
 
