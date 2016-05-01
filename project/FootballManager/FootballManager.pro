@@ -17,14 +17,20 @@ SOURCES += main.cpp\
     team.cpp \
     player.cpp \
     mainmenu.cpp \
-    matchwindow.cpp
+    matchwindow.cpp \
+    teamwindow.cpp \
+    marketwindow.cpp
 
 HEADERS  += mainwindow.h \
     team.h \
     player.h \
     mainmenu.h \
-    matchwindow.h
+    matchwindow.h \
+    teamwindow.h \
+    marketwindow.h
 
 FORMS    += mainwindow.ui \
     mainmenu.ui \
-    match.ui
+    match.ui \
+    teamwindow.ui \
+    marketwindow.ui

@@ -39,10 +39,10 @@ Team::Team(QString name): name(name)
     Player* player11 = new Player("Jeremy", "Menez", 98, 75);
     playerList[10] = player11;
 
-    b_total = 150;
-    b_training = 30;
-    b_salaries = 100;
-    b_maintenance = 20;
+    b_total = 20;
+    b_training = 10;
+    b_stadion = 5;
+    b_healthcare = 5;
 
 }
 
@@ -67,4 +67,20 @@ void Team::printPlayers() {
 
 QString Team::toString() {
     return name;
+}
+
+int Team::getTrainingBudget() {
+    return b_training;
+}
+
+int Team::getStadionBudget() {
+    return b_stadion;
+}
+
+int Team::getHealthcareBudget() {
+    return b_healthcare;
+}
+
+int Team::getTotalBudget() {
+    return b_total;
 }

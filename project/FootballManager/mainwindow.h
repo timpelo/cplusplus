@@ -33,6 +33,8 @@ public slots:
     bool playGame();
     void teamView();
     void showMenu();
+    void showMarket();
+    void quitGame();
 };
 
 #endif // MAINWINDOW_H

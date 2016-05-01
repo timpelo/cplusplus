@@ -15,14 +15,18 @@ public:
     Player** getPlayerList();
     void printPlayers();
     QString toString();
+    int getTrainingBudget();
+    int getStadionBudget();
+    int getHealthcareBudget();
+    int getTotalBudget();
 
 private:
 
     // b_n variables are for budget. Unit is millon euros.
     int b_total;
     int b_training;
-    int b_salaries;
-    int b_maintenance;
+    int b_stadion;
+    int b_healthcare;
 };
 
 #endif // TEAM_H

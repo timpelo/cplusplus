@@ -1,7 +1,13 @@
 #include "mainwindow.h"
 #include "matchwindow.h"
+#include "teamwindow.h"
+#include "marketwindow.h"
+
 #include "ui_mainwindow.h"
 #include "ui_mainmenu.h"
+#include "ui_teamwindow.h"
+#include "ui_marketwindow.h"
+
 #include <iostream>
 
 using namespace std;
@@ -35,7 +41,10 @@ MainWindow::~MainWindow()
 void MainWindow::setButtonListeners() {
     connect(mainMenu->ui->playButton, SIGNAL(clicked()), this, SLOT(playGame()));
     connect(mainMenu->ui->teamButton, SIGNAL(clicked()), this, SLOT(teamView()));
+    connect(mainMenu->ui->marketButton, SIGNAL(clicked()), this, SLOT(showMarket()));
+    connect(mainMenu->ui->quitButton, SIGNAL(clicked()), this, SLOT(quitGame()));
     connect(backButton, SIGNAL(clicked()), this, SLOT(showMenu()));
+
 }
 
 bool MainWindow::playGame() {
@@ -48,21 +57,10 @@ bool MainWindow::playGame() {
 }
 
 void MainWindow::teamView() {
-    playerListWidget = new QListWidget(this);
+    TeamWindow* teamWidget = new TeamWindow(playerTeam, this);
     setMenuWidget(backButton);
     backButton->setVisible(true);
-
-    for(int i = 0; i < 11; i++ ) {
-        Player* pl = playerTeam->getPlayerList()[i];
-        QString info = pl->getFname() + " "
-                + pl->getLname() + " "
-                + " att: " + QString::number(pl->getAttackVal()) + " "
-                + " def: " + QString::number(pl->getDefenceVal());
-
-        playerListWidget->addItem(info);
-    }
-
-    setCentralWidget(playerListWidget);
+    setCentralWidget(teamWidget);
 }
 
 void MainWindow::showMenu(){
@@ -76,3 +74,15 @@ void MainWindow::showMenu(){
     setButtonListeners();
 
 }
+
+void MainWindow::showMarket() {
+    MarketWindow* market = new MarketWindow(playerTeam, this);
+    setMenuWidget(backButton);
+    backButton->setVisible(true);
+    setCentralWidget(market);
+}
+
+void MainWindow::quitGame() {
+    close();
+}
+
