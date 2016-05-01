@@ -69,18 +69,33 @@ QString Team::toString() {
     return name;
 }
 
-int Team::getTrainingBudget() {
+double Team::getTrainingBudget() {
     return b_training;
 }
 
-int Team::getStadionBudget() {
+double Team::getStadionBudget() {
     return b_stadion;
 }
 
-int Team::getHealthcareBudget() {
+double Team::getHealthcareBudget() {
     return b_healthcare;
 }
 
-int Team::getTotalBudget() {
+double Team::getTotalBudget() {
     return b_total;
+}
+
+void Team::setTrainingBudget(double budget){
+    b_training = budget;
+}
+
+void Team::setStadionBudget(double budget){
+    b_stadion = budget;
+}
+void Team::setHealthcareBudget(double budget){
+    b_healthcare = budget;
+}
+
+void Team::setTotalBudget(double budget){
+    b_total = budget;
 }

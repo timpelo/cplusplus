@@ -5,7 +5,7 @@
 #include <QListWidget>
 #include <QPushButton>
 #include <string>
-#include "team.h";
+#include "team.h"
 #include "player.h"
 #include "mainmenu.h"
 
