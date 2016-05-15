@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <QTimer>
+#include <iostream>
+#include <tgmath.h>
 
 MatchWindow::MatchWindow(QWidget *parent) : QWidget(parent)
 {
@@ -21,6 +23,17 @@ MatchWindow::MatchWindow(QWidget *parent) : QWidget(parent)
 
     int guestGoals = rand()% 5 + 0;
     int homeGoals = rand()% 5 + 0;
+
+    double t_budget = home->getTrainingBudget();
+    double h_budget = home->getHealthcareBudget();
+
+    std::cout << h_budget << t_budget << std::endl;
+
+
+    int extraGoals = rand()% 1 + 2;
+    extraGoals = extraGoals*t_budget*h_budget;
+    std::cout << "extra goals:" << extraGoals << std::endl;
+
 
     ui->guestGoalDisplay->display(guestGoals);
     ui->homeGoalDisplay->display(homeGoals);

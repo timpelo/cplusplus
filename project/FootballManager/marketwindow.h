@@ -16,10 +16,16 @@ class MarketWindow : public QWidget
 public:
     explicit MarketWindow(Team* team, QWidget *parent = 0);
     ~MarketWindow();
+    void setListeners();
+    int teamPlayerCount;
 
 private:
     Ui::MarketWindow *ui;
     Team* team;
+
+public slots:
+    void buyPlayer();
+    void sellPlayer();
 };
 
 #endif // MARKETWINDOW_H

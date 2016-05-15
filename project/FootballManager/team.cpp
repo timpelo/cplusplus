@@ -5,7 +5,6 @@ Team::Team(QString name): name(name)
     playerList = new Player*[11];
 
 
-    // Inserst dummy data to playerList. Will be repleaced.
     Player* player = new Player("Christian", "Abbiati", 77, 95);
     playerList[0] = player;
 
